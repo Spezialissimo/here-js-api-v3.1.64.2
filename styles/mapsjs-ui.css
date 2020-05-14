@@ -145,6 +145,11 @@
   margin-bottom: 8px;
   cursor: default;
 }
+
+.H_ui[dir=rtl] .H_rdo_title {
+  text-align: right;
+}
+
 .H_rdo ul {
   list-style: none;
   margin: 0 auto;
@@ -238,6 +243,8 @@
 }
 .H_overlay .H_btn{
   border-radius: 0px;
+  height: auto;
+  min-height: 24px;
 }
 
 .H_overlay .H_btn:hover,
@@ -422,6 +429,11 @@
   box-shadow: none;
 }
 
+.H_ui[dir=rtl] .H_ib_close {
+  left: 12px;
+  right: auto;
+}
+
 .H_ib_close svg.H_icon {
     top: 0;
     transform: none;
@@ -448,6 +460,10 @@
   -webkit-user-select: text;
   -o-user-select: text;
   -ms-user-select: text;
+}
+
+.H_ui[dir=rtl] .H_ib_content {
+  margin: 16px 16px 20px 28px;
 }
 
 
@@ -619,12 +635,12 @@
   outline: none;
 }
 
-.H_context_menu_item.clickable:hover {
+.H_context_menu_item.H_clickable:hover {
   color: rgba(15, 22, 33, 0.8);
   cursor: pointer;
 }
-.H_context_menu_item.disabled:hover,
-.H_context_menu_item.disabled {
+.H_context_menu_item.H_disabled:hover,
+.H_context_menu_item.H_disabled {
     background: transparent !important;
     color: rgba(15, 22, 33, 0.2);
     cursor: default !important;
@@ -650,6 +666,7 @@
   box-shadow: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
   text-shadow:
     -1px -1px 0 rgba(255, 255, 255, 0.7),
     1px -1px 0 rgba(255, 255, 255, 0.7),
@@ -665,6 +682,11 @@
   position: relative;
   margin: -16px -28px -20px -16px;
 }
+
+[dir="rtl"] .H_tib_content {
+  margin: -16px -16px -20px -28px;
+}
+
 .H_tib .H_tib_desc { padding: 0px 16px 20px 16px }
 .H_tib .H_tib_time {color: rgba(15,22,33,.4);margin-top: 0.8em;}
 .H_tib_right { float:right; }
@@ -715,6 +737,19 @@ svg.H_icon .H_icon_stroke {
 }
 .H_rdo .H_btn.H_active {
   background: none;
+}
+
+.H_btn.H_focused,
+.H_context_menu_item.H_clickable.H_focused {
+  box-shadow:inset 0px 0px 0px 1px rgba(15, 22, 33, 0.8);
+}
+
+.H_el:focus-visible,
+.H_btn:focus-visible, /* popup close btn is H_btn, but not H_el */
+.H_imprint a:focus-visible {
+  border-radius: 0.2em;
+  outline: 1px solid rgba(15, 22, 33, 0.8);
+  box-shadow: 0 0 0 2px #fff;
 }
 
 .H_active > svg.H_icon,
